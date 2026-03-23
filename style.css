@@ -692,6 +692,42 @@ section#skills .skill-card img {
   transform: translateY(-2px);
 }
 
+/* ===== FOOTER SECTION ===== */
+.footer-section {
+  background: rgba(0,0,0,0.9);
+  padding: 20px 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccc;
+  font-size: 14px;
+}
+
+.footer-center {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right button {
+  background: none;
+  border: none;
+  color: #5eead4;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.footer-right button:hover {
+  color: #22d3ee;
+}
+
 /* ========================================= */
 /* Additional Responsive Improvements       */
 /* ========================================= */
@@ -716,6 +752,13 @@ section#skills .skill-card img {
 
     /* Skills */
     .skill-cards-grid { justify-content: center; }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
 }
 
 @media (max-width: 576px) {
