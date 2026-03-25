@@ -146,14 +146,22 @@ document.addEventListener('DOMContentLoaded', () => {
 function sendEmail(e) {
   e.preventDefault();
 
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-  })
+  emailjs.sendForm(
+    "service_90xi3ih",
+    "template_bc1s09d",
+    "#contact-form"
+  )
   .then(function() {
+
+    // Hide form
     document.getElementById("contact-form").style.display = "none";
+
+    // Show existing Thank You card
     document.getElementById("thank-you-card").style.display = "block";
+
+  }, function(error) {
+    alert("Failed to send message. Please try again.");
+    console.log(error);
   });
 }
 

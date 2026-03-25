@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     
     <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -635,13 +634,13 @@
                         <form id="contact-form" onsubmit="sendEmail(event)">
                             <div class="row g-3">
                                 <div class="col-12">
-                                    <input type="text" id="name" placeholder="Full Name" class="contact-input" required>
+                                    <input type="text" id="name" name="from_name" placeholder="Full Name" class="contact-input" required>
                                 </div>
                                 <div class="col-12">
-                                    <input type="email" id="email" placeholder="Email" class="contact-input" required>
+                                    <input type="email" id="email" name="from_email" placeholder="Email" class="contact-input" required>
                                 </div>
                                 <div class="col-12">
-                                    <textarea id="message" rows="4" placeholder="Message" class="contact-input" required></textarea>
+                                    <textarea id="message" name="message" rows="4" placeholder="Message" class="contact-input" required></textarea>
                                 </div>
                                 <div class="col-12 mt-4">
                                     <button type="submit" class="w-100 fw-bold fs-6 text-dark contact-btn">Send</button>
@@ -653,7 +652,6 @@
                         <div id="thank-you-card" style="display: none;">
                             <h2 class="text-cyan mb-3">Message Sent Successfully 🎉</h2>
                             <p class="text-light-gray mb-4">Thank you for reaching out. I’ll get back to you soon.</p>
-                            <button onclick="scrollToTop()">Back to Home</button>
                         </div>
                     </div>
                 </div>
@@ -674,5 +672,11 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+    (function(){
+      emailjs.init("SC-TV0ZdjGRCz4cnW");
+    })();
+    </script>
 </body>
 </html>
